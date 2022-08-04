@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <artifactId>common</artifactId>
+        <groupId>mao</groupId>
+        <version>0.0.1</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+      -maven项目核心配置文件-
+    Project name(项目名称)：spring_cloud_security
+    Author(作者）: mao
+    Author QQ：1296193245
+    GitHub：https://github.com/maomao124/
+    Date(创建日期)： 2022/8/4
+    Time(创建时间)： 21:29
+    -->
+    <artifactId>base</artifactId>
+
+
+    <properties>
+
+    </properties>
+
+    <dependencies>
+
+    </dependencies>
+
+
+</project>

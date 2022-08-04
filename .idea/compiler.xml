@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring_security" />
+        <module name="gateway" />
+        <module name="base" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="base" target="11" />
+      <module name="commom" target="11" />
+      <module name="common" target="11" />
+      <module name="gateway" target="11" />
+      <module name="infrastructure" target="11" />
+      <module name="spring_cloud_security" target="11" />
+      <module name="spring_security" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="base" options="-parameters" />
+      <module name="commom" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="spring_cloud_security" options="-parameters" />
+      <module name="spring_security" options="-parameters" />
+    </option>
+  </component>
+</project>
