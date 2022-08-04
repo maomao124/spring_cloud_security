@@ -7,6 +7,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import security.MD5PasswordEncoder;
+import security.TokenManager;
 
 /**
  * Project name(项目名称)：spring_cloud_security
@@ -28,7 +30,7 @@ public class TokenSecurityConfig extends WebSecurityConfigurerAdapter
 {
     private TokenManager tokenManager;
     private RedisTemplate redisTemplate;
-    private DefaultPasswordEncoder defaultPasswordEncoder;
+    private MD5PasswordEncoder mD5PasswordEncoder;
     private UserDetailsService userDetailsService;
 
 
