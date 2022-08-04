@@ -20,8 +20,15 @@ import java.io.IOException;
  * Description(描述)： 无
  */
 
+
 public class ResponseUtil
 {
+    /**
+     * Out.
+     *
+     * @param response the response
+     * @param result   the result
+     */
     public static void out(HttpServletResponse response, Result result)
     {
         ObjectMapper mapper = new ObjectMapper();

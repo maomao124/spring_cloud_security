@@ -16,6 +16,7 @@ import java.util.Map;
  * Description(描述)： 无
  */
 
+
 public class Result
 {
     //是否成功
@@ -30,41 +31,81 @@ public class Result
     //数据
     private Map<String, Object> data = new HashMap<>();
 
+    /**
+     * Gets success.
+     *
+     * @return the success
+     */
     public Boolean getSuccess()
     {
         return success;
     }
 
+    /**
+     * Sets success.
+     *
+     * @param success the success
+     */
     public void setSuccess(Boolean success)
     {
         this.success = success;
     }
 
+    /**
+     * Gets code.
+     *
+     * @return the code
+     */
     public Integer getCode()
     {
         return code;
     }
 
+    /**
+     * Sets code.
+     *
+     * @param code the code
+     */
     public void setCode(Integer code)
     {
         this.code = code;
     }
 
+    /**
+     * Gets message.
+     *
+     * @return the message
+     */
     public String getMessage()
     {
         return message;
     }
 
+    /**
+     * Sets message.
+     *
+     * @param message the message
+     */
     public void setMessage(String message)
     {
         this.message = message;
     }
 
+    /**
+     * Gets data.
+     *
+     * @return the data
+     */
     public Map<String, Object> getData()
     {
         return data;
     }
 
+    /**
+     * Sets data.
+     *
+     * @param data the data
+     */
     public void setData(Map<String, Object> data)
     {
         this.data = data;
@@ -82,7 +123,7 @@ public class Result
     /**
      * 成功的静态方法
      *
-     * @return Result对象
+     * @return Result对象 result
      */
     public static Result ok()
     {
@@ -96,7 +137,8 @@ public class Result
 
     /**
      * 失败的静态方法
-     * @return Result对象
+     *
+     * @return Result对象 result
      */
     public static Result error()
     {
@@ -107,30 +149,61 @@ public class Result
         return result;
     }
 
+    /**
+     * Success result.
+     *
+     * @param success the success
+     * @return the result
+     */
     public Result success(Boolean success)
     {
         this.setSuccess(success);
         return this;
     }
 
+    /**
+     * Message result.
+     *
+     * @param message the message
+     * @return the result
+     */
     public Result message(String message)
     {
         this.setMessage(message);
         return this;
     }
 
+    /**
+     * Code result.
+     *
+     * @param code the code
+     * @return the result
+     */
     public Result code(Integer code)
     {
         this.setCode(code);
         return this;
     }
 
+    /**
+     * Data result.
+     *
+     * @param key   the key
+     * @param value the value
+     * @return the result
+     */
     public Result data(String key, Object value)
     {
         this.data.put(key, value);
         return this;
     }
 
+    /**
+     * Data result.
+     *
+     * @param map the map
+     * @return the result
+     */
     public Result data(Map<String, Object> map)
     {
         this.setData(map);
