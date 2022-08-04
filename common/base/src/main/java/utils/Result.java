@@ -93,7 +93,6 @@ public class Result
         return result;
     }
 
-    //失败静态方法
 
     /**
      * 失败的静态方法
