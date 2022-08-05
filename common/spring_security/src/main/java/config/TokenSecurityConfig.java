@@ -2,6 +2,7 @@ package config;
 
 import filter.TokenAuthFilter;
 import filter.TokenLoginFilter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -31,6 +32,7 @@ import security.UnAuthEntryPoint;
  */
 
 @Configuration
+@Slf4j
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class TokenSecurityConfig extends WebSecurityConfigurerAdapter
@@ -44,6 +46,7 @@ public class TokenSecurityConfig extends WebSecurityConfigurerAdapter
     public TokenSecurityConfig(TokenManager tokenManager, StringRedisTemplate stringRedisTemplate,
                                PasswordEncoder passwordEncoder, UserDetailsService userDetailsService)
     {
+        log.debug("加载TokenSecurityConfig");
         this.tokenManager = tokenManager;
         this.stringRedisTemplate = stringRedisTemplate;
         this.passwordEncoder = passwordEncoder;
