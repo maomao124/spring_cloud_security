@@ -1,7 +1,7 @@
 package config;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -29,7 +29,7 @@ import security.TokenManager;
 public class TokenSecurityConfig extends WebSecurityConfigurerAdapter
 {
     private TokenManager tokenManager;
-    private RedisTemplate redisTemplate;
+    private StringRedisTemplate stringRedisTemplate;
     private MD5PasswordEncoder mD5PasswordEncoder;
     private UserDetailsService userDetailsService;
 
