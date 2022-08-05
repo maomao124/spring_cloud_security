@@ -1,14 +1,21 @@
 package config;
 
+import filter.TokenAuthFilter;
+import filter.TokenLoginFilter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import security.MD5PasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import security.TokenLogoutHandler;
 import security.TokenManager;
+import security.UnAuthEntryPoint;
 
 /**
  * Project name(项目名称)：spring_cloud_security
@@ -28,15 +35,59 @@ import security.TokenManager;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class TokenSecurityConfig extends WebSecurityConfigurerAdapter
 {
-    private TokenManager tokenManager;
-    private StringRedisTemplate stringRedisTemplate;
-    private MD5PasswordEncoder mD5PasswordEncoder;
-    private UserDetailsService userDetailsService;
+    private final TokenManager tokenManager;
+    private final StringRedisTemplate stringRedisTemplate;
+    private final PasswordEncoder passwordEncoder;
+    private final UserDetailsService userDetailsService;
 
+    @Autowired
+    public TokenSecurityConfig(TokenManager tokenManager, StringRedisTemplate stringRedisTemplate,
+                               PasswordEncoder passwordEncoder, UserDetailsService userDetailsService)
+    {
+        this.tokenManager = tokenManager;
+        this.stringRedisTemplate = stringRedisTemplate;
+        this.passwordEncoder = passwordEncoder;
+        this.userDetailsService = userDetailsService;
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception
     {
+        //配置异常处理
+        http.exceptionHandling()
+                //没有权限访问的异常处理器
+                .authenticationEntryPoint(new UnAuthEntryPoint());
 
+
+        //csrf设置
+        http.csrf().disable();
+
+        //认证配置
+        http.authorizeRequests()
+                .anyRequest().authenticated()
+                //设置退出路径
+                .and().logout().logoutUrl("/admin/acl/index/logout")
+                //设置退出登录的处理器
+                .addLogoutHandler(new TokenLogoutHandler(tokenManager, stringRedisTemplate))
+                .and()
+                //设置过滤器
+                .addFilter(new TokenLoginFilter(tokenManager, stringRedisTemplate, authenticationManager()))
+                .addFilter(new TokenAuthFilter(authenticationManager(), tokenManager, stringRedisTemplate))
+                .httpBasic();
     }
+
+    @Override
+    public void configure(AuthenticationManagerBuilder auth) throws Exception
+    {
+        //设置userDetailsService和passwordEncoder
+        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
+    }
+
+    @Override
+    public void configure(WebSecurity web) throws Exception
+    {
+        //设置不进行认证的路径，可以直接访问
+        web.ignoring().antMatchers("/api/**");
+    }
+
 }
