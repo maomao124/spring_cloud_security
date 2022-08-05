@@ -1,4 +1,4 @@
-package entity;
+package mao.spring_security.entity;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.security.core.GrantedAuthority;
@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * Project name(项目名称)：spring_cloud_security
- * Package(包名): entity
+ * Package(包名): mao.spring_security.entity
  * Class(类名): SecurityUser
  * Author(作者）: mao
  * Author QQ：1296193245

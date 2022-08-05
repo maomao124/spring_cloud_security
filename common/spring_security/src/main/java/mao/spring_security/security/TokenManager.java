@@ -1,4 +1,4 @@
-package security;
+package mao.spring_security.security;
 
 import io.jsonwebtoken.CompressionCodecs;
 import io.jsonwebtoken.Jwts;
@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  * Project name(项目名称)：spring_cloud_security
- * Package(包名): security
+ * Package(包名): mao.spring_security.security
  * Class(类名): TokenManager
  * Author(作者）: mao
  * Author QQ：1296193245

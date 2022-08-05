@@ -65,7 +65,7 @@ public class MybatisPlusSqlGenerator
         // 生成的文件放在那个目录下  若没有该文件 则会创建
         packageConfig.setParent("com.alibaba.product");
         //此对象与数据库表结构一一对应，通过 DAO 层向上传输数据源对象。
-        packageConfig.setEntity("pojo.entity");
+        packageConfig.setEntity("pojo.mao.spring_security.entity");
         autoGenerator.setPackageInfo(packageConfig);
 
         // 5、策略配置

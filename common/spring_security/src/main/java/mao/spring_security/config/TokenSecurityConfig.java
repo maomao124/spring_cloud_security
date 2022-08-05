@@ -1,7 +1,7 @@
-package config;
+package mao.spring_security.config;
 
-import filter.TokenAuthFilter;
-import filter.TokenLoginFilter;
+import mao.spring_security.filter.TokenAuthFilter;
+import mao.spring_security.filter.TokenLoginFilter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -14,13 +14,15 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import security.TokenLogoutHandler;
-import security.TokenManager;
-import security.UnAuthEntryPoint;
+import mao.spring_security.security.TokenLogoutHandler;
+import mao.spring_security.security.TokenManager;
+import mao.spring_security.security.UnAuthEntryPoint;
+
+import javax.annotation.PostConstruct;
 
 /**
  * Project name(项目名称)：spring_cloud_security
- * Package(包名): config
+ * Package(包名): mao.spring_security.config
  * Class(类名): TokenSecurityConfig
  * Author(作者）: mao
  * Author QQ：1296193245
@@ -46,7 +48,6 @@ public class TokenSecurityConfig extends WebSecurityConfigurerAdapter
     public TokenSecurityConfig(TokenManager tokenManager, StringRedisTemplate stringRedisTemplate,
                                PasswordEncoder passwordEncoder, UserDetailsService userDetailsService)
     {
-        log.debug("加载TokenSecurityConfig");
         this.tokenManager = tokenManager;
         this.stringRedisTemplate = stringRedisTemplate;
         this.passwordEncoder = passwordEncoder;
@@ -91,6 +92,13 @@ public class TokenSecurityConfig extends WebSecurityConfigurerAdapter
     {
         //设置不进行认证的路径，可以直接访问
         web.ignoring().antMatchers("/api/**");
+    }
+
+
+    @PostConstruct
+    public void init()
+    {
+        log.debug("加载TokenSecurityConfig");
     }
 
 }

@@ -1,10 +1,8 @@
-package security;
-
-import static org.junit.jupiter.api.Assertions.*;
+package mao.spring_security.security;
 
 /**
  * Project name(项目名称)：spring_cloud_security
- * Package(包名): security
+ * Package(包名): mao.spring_security.security
  * Class(测试类名): TokenManagerTest
  * Author(作者）: mao
  * Author QQ：1296193245

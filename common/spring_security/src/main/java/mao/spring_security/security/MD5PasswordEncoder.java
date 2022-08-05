@@ -1,4 +1,4 @@
-package security;
+package mao.spring_security.security;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -6,7 +6,7 @@ import utils.sha.MD5;
 
 /**
  * Project name(项目名称)：spring_cloud_security
- * Package(包名): security
+ * Package(包名): mao.spring_security.security
  * Class(类名): MD5PasswordEncoder
  * Author(作者）: mao
  * Author QQ：1296193245

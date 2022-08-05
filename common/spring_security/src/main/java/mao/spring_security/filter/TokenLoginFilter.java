@@ -1,9 +1,9 @@
-package filter;
+package mao.spring_security.filter;
 
 import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import entity.SecurityUser;
-import entity.User;
+import mao.spring_security.entity.SecurityUser;
+import mao.spring_security.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -11,7 +11,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import security.TokenManager;
+import mao.spring_security.security.TokenManager;
 import utils.ResponseUtil;
 import utils.Result;
 
@@ -23,7 +23,7 @@ import java.io.IOException;
 
 /**
  * Project name(项目名称)：spring_cloud_security
- * Package(包名): filter
+ * Package(包名): mao.spring_security.filter
  * Class(类名): TokenLoginFilter
  * Author(作者）: mao
  * Author QQ：1296193245
@@ -78,7 +78,7 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter
         String token = tokenManager.createToken(user.getCurrentUserInfo().getUsername());
         //把用户名称和用户权限列表放到redis
         String json = JSON.toJSONString(user.getPermissionValueList());
-        stringRedisTemplate.opsForValue().set("security:user:" + user.getCurrentUserInfo().getUsername(), json);
+        stringRedisTemplate.opsForValue().set("mao.spring_security.security:user:" + user.getCurrentUserInfo().getUsername(), json);
         log.debug("将权限列表放入redis：" + json);
         //返回token
         log.debug("返回token：\n" + token + "\n");

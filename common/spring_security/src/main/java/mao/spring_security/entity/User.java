@@ -1,4 +1,4 @@
-package entity;
+package mao.spring_security.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 /**
  * Project name(项目名称)：spring_cloud_security
- * Package(包名): entity
+ * Package(包名): mao.spring_security.entity
  * Class(类名): User
  * Author(作者）: mao
  * Author QQ：1296193245

@@ -1,4 +1,4 @@
-package security;
+package mao.spring_security.security;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Project name(项目名称)：spring_cloud_security
- * Package(包名): security
+ * Package(包名): mao.spring_security.security
  * Class(类名): TokenLogoutHandler
  * Author(作者）: mao
  * Author QQ：1296193245
@@ -50,7 +50,7 @@ public class TokenLogoutHandler implements LogoutHandler
         {
             tokenManager.removeToken(token);
             String userInfoFromToken = tokenManager.getUserInfoFromToken(token);
-            stringRedisTemplate.delete("security:user:" + userInfoFromToken);
+            stringRedisTemplate.delete("mao.spring_security.security:user:" + userInfoFromToken);
             log.debug("用户" + userInfoFromToken + "退出登录");
         }
         ResponseUtil.out(response, Result.ok().message("退出成功"));

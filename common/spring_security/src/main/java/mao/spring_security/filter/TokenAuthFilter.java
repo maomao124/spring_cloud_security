@@ -1,4 +1,4 @@
-package filter;
+package mao.spring_security.filter;
 
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
@@ -9,7 +9,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
-import security.TokenManager;
+import mao.spring_security.security.TokenManager;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -22,7 +22,7 @@ import java.util.List;
 
 /**
  * Project name(项目名称)：spring_cloud_security
- * Package(包名): filter
+ * Package(包名): mao.spring_security.filter
  * Class(类名): TokenAuthFilter
  * Author(作者）: mao
  * Author QQ：1296193245
@@ -78,7 +78,7 @@ public class TokenAuthFilter extends BasicAuthenticationFilter
             //从请求头里获取用户名
             String userInfoFromToken = tokenManager.getUserInfoFromToken(token);
             //从redis里获取权限列表
-            String json = stringRedisTemplate.opsForValue().get("security:user:" + userInfoFromToken);
+            String json = stringRedisTemplate.opsForValue().get("mao.spring_security.security:user:" + userInfoFromToken);
             if (json == null)
             {
                 return null;

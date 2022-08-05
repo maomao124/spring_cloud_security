@@ -1,13 +1,14 @@
 package mao.service_acl;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"mao.spring_security"})
 @EnableDiscoveryClient
-@ComponentScan("mao")
+//@ComponentScan("mao")
+@MapperScan("mao.service_acl.mapper")
 public class ServiceAclApplication
 {
 
