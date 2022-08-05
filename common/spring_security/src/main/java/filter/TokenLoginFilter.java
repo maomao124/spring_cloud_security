@@ -35,9 +35,9 @@ import java.io.IOException;
 
 public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter
 {
-    private TokenManager tokenManager;
-    private StringRedisTemplate stringRedisTemplate;
-    private AuthenticationManager authenticationManager;
+    private final TokenManager tokenManager;
+    private final StringRedisTemplate stringRedisTemplate;
+    private final AuthenticationManager authenticationManager;
 
 
     public TokenLoginFilter(TokenManager tokenManager, StringRedisTemplate stringRedisTemplate, AuthenticationManager authenticationManager)
