@@ -51,6 +51,7 @@ public class TokenAuthFilter extends BasicAuthenticationFilter
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
             throws IOException, ServletException
     {
+        log.debug("开始执行TokenAuthFilter过滤器的doFilterInternal方法");
         //获取当前认证成功用户权限信息
         UsernamePasswordAuthenticationToken authentication = this.getAuthentication(request);
         //判断如果有权限信息，放到权限上下文中

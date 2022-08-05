@@ -1,5 +1,6 @@
 package security;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.logout.LogoutHandler;
@@ -22,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
  * Description(描述)： 退出处理器
  */
 
-
+@Slf4j
 public class TokenLogoutHandler implements LogoutHandler
 {
     private final TokenManager tokenManager;
@@ -49,7 +50,8 @@ public class TokenLogoutHandler implements LogoutHandler
         {
             tokenManager.removeToken(token);
             String userInfoFromToken = tokenManager.getUserInfoFromToken(token);
-            stringRedisTemplate.delete("security:" + userInfoFromToken);
+            stringRedisTemplate.delete("security:user:" + userInfoFromToken);
+            log.debug("用户" + userInfoFromToken + "退出登录");
         }
         ResponseUtil.out(response, Result.ok().message("退出成功"));
     }

@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import entity.SecurityUser;
 import entity.User;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -33,6 +34,7 @@ import java.io.IOException;
  * Description(描述)： 无
  */
 
+@Slf4j
 public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter
 {
     private final TokenManager tokenManager;
@@ -51,6 +53,7 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
             throws AuthenticationException
     {
+        log.debug("开始获取表单提交的用户名和密码");
         //获取表单提交的用户名和密码
         try
         {
@@ -67,6 +70,7 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult)
             throws IOException, ServletException
     {
+        log.debug("认证成功，调用TokenLoginFilter的successfulAuthentication方法");
         //认证成功调用该方法
         //获取用户信息
         SecurityUser user = (SecurityUser) authResult.getPrincipal();
@@ -75,7 +79,9 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter
         //把用户名称和用户权限列表放到redis
         String json = JSON.toJSONString(user.getPermissionValueList());
         stringRedisTemplate.opsForValue().set("security:user:" + user.getCurrentUserInfo().getUsername(), json);
+        log.debug("将权限列表放入redis：" + json);
         //返回token
+        log.debug("返回token：\n" + token + "\n");
         ResponseUtil.out(response, Result.ok().data("token", token));
     }
 
@@ -83,6 +89,7 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter
     protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response, AuthenticationException failed)
             throws IOException, ServletException
     {
+        log.debug("认证失败");
         //返回失败
         ResponseUtil.out(response, Result.error().message("认证失败"));
     }
