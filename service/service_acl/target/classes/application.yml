@@ -36,6 +36,24 @@ spring:
 
 
 
+  cloud:
+    nacos:
+      discovery:
+        # nacos 服务端地址
+        server-addr: localhost:8848
+        # 配置集群名称，也就是机房位置
+        #cluster-name: HZ
+        # namespace: 5544c4b1-2899-4915-94af-f9940c01c2b9
+        # 是否为临时实例，true为临时实例
+        ephemeral: false
+
+
+
+ribbon:
+  eager-load:
+    # 开启饥饿加载
+    enabled: true
+
 
 
 
