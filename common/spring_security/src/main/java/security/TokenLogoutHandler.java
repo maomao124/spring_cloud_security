@@ -22,12 +22,19 @@ import javax.servlet.http.HttpServletResponse;
  * Description(描述)： 退出处理器
  */
 
+
 public class TokenLogoutHandler implements LogoutHandler
 {
     private final TokenManager tokenManager;
     private final StringRedisTemplate stringRedisTemplate;
 
 
+    /**
+     * Instantiates a new Token logout handler.
+     *
+     * @param tokenManager        the token manager
+     * @param stringRedisTemplate the string redis template
+     */
     public TokenLogoutHandler(TokenManager tokenManager, StringRedisTemplate stringRedisTemplate)
     {
         this.tokenManager = tokenManager;

@@ -1,9 +1,24 @@
 package filter;
 
+import com.alibaba.fastjson.JSON;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import entity.SecurityUser;
+import entity.User;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import security.TokenManager;
+import utils.ResponseUtil;
+import utils.Result;
+
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * Project name(项目名称)：spring_cloud_security
@@ -18,7 +33,7 @@ import security.TokenManager;
  * Description(描述)： 无
  */
 
-public class TokenLoginFilter  extends UsernamePasswordAuthenticationFilter
+public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter
 {
     private TokenManager tokenManager;
     private StringRedisTemplate stringRedisTemplate;
@@ -32,5 +47,43 @@ public class TokenLoginFilter  extends UsernamePasswordAuthenticationFilter
         this.authenticationManager = authenticationManager;
     }
 
+    @Override
+    public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
+            throws AuthenticationException
+    {
+        //获取表单提交的用户名和密码
+        try
+        {
+            User user = new ObjectMapper().readValue(request.getInputStream(), User.class);
+            return authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+        }
+        catch (Exception e)
+        {
+            throw new RuntimeException(e);
+        }
+    }
 
+    @Override
+    protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult)
+            throws IOException, ServletException
+    {
+        //认证成功调用该方法
+        //获取用户信息
+        SecurityUser user = (SecurityUser) authResult.getPrincipal();
+        //根据用户名生成token
+        String token = tokenManager.createToken(user.getCurrentUserInfo().getUsername());
+        //把用户名称和用户权限列表放到redis
+        String json = JSON.toJSONString(user.getPermissionValueList());
+        stringRedisTemplate.opsForValue().set("security:user:" + user.getCurrentUserInfo().getUsername(), json);
+        //返回token
+        ResponseUtil.out(response, Result.ok().data("token", token));
+    }
+
+    @Override
+    protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response, AuthenticationException failed)
+            throws IOException, ServletException
+    {
+        //返回失败
+        ResponseUtil.out(response, Result.error().message("认证失败"));
+    }
 }
