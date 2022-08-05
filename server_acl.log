@@ -1,0 +1,268 @@
+2022-08-05 22:00:05.819  INFO 10756 --- [main] mao.service_acl.ServiceAclApplication    : No active profile set, falling back to default profiles: default
+2022-08-05 22:00:06.228  INFO 10756 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-08-05 22:00:06.230  INFO 10756 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-08-05 22:00:06.243  INFO 10756 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4ms. Found 0 Redis repository interfaces.
+2022-08-05 22:00:06.344  WARN 10756 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[mao.service_acl]' package. Please check your configuration.
+2022-08-05 22:00:06.387  INFO 10756 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=21fff6a5-fce1-3f2f-8db5-e950fca03553
+2022-08-05 22:00:06.622  INFO 10756 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-05 22:00:06.630  INFO 10756 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-05 22:00:06.630  INFO 10756 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2022-08-05 22:00:06.752  INFO 10756 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-05 22:00:06.753  INFO 10756 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 918 ms
+2022-08-05 22:00:06.795  WARN 10756 --- [main] o.s.c.n.a.ArchaiusAutoConfiguration      : No spring.application.name found, defaulting to 'application'
+2022-08-05 22:00:06.797  WARN 10756 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-05 22:00:06.798  INFO 10756 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-05 22:00:06.801  WARN 10756 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-05 22:00:06.801  INFO 10756 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-05 22:00:06.937  INFO 10756 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-08-05 22:00:07.133  INFO 10756 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'Nacos-Watch-Task-Scheduler'
+2022-08-05 22:00:07.168  INFO 10756 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-08-05 22:00:07.267  INFO 10756 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-08-05 22:00:07.793  INFO 10756 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 571cdbd7-6feb-43fa-a708-cce7f693351e
+
+2022-08-05 22:00:07.860  INFO 10756 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@18d610e1, org.springframework.security.web.context.SecurityContextPersistenceFilter@386e9fd8, org.springframework.security.web.header.HeaderWriterFilter@5403431a, org.springframework.security.web.csrf.CsrfFilter@64757d56, org.springframework.security.web.authentication.logout.LogoutFilter@5341e71a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@258a8584, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4cfc0c48, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@528e5e38, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@222d9d4f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@10745a02, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5ba184fc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@16391278, org.springframework.security.web.session.SessionManagementFilter@3d798e76, org.springframework.security.web.access.ExceptionTranslationFilter@347123dc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1a7d0c9f]
+2022-08-05 22:00:08.093 ERROR 10756 --- [main] c.a.cloud.nacos.discovery.NacosWatch     : namingService subscribe failed, properties:NacosDiscoveryProperties{serverAddr='localhost:8848', endpoint='', namespace='', watchDelay=30000, logName='', service='', weight=1.0, clusterName='DEFAULT', group='DEFAULT_GROUP', namingLoadCacheAtStart='false', metadata={preserved.register.source=SPRING_CLOUD}, registerEnabled=true, ip='192.168.202.1', networkInterface='', port=-1, secure=false, accessKey='', secretKey='', heartBeatInterval=null, heartBeatTimeout=null, ipDeleteTimeout=null, failFast=true}
+
+java.lang.IllegalArgumentException: Param 'serviceName' is illegal, serviceName is blank
+	at com.alibaba.nacos.api.naming.utils.NamingUtils.getGroupedName(NamingUtils.java:47) ~[nacos-api-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.NacosNamingService.subscribe(NacosNamingService.java:457) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.cloud.nacos.discovery.NacosWatch.start(NacosWatch.java:131) ~[spring-cloud-starter-alibaba-nacos-discovery-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:182) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:53) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:360) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:158) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:122) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:895) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:554) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:405) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at mao.service_acl.ServiceAclApplication.main(ServiceAclApplication.java:16) ~[classes/:na]
+
+2022-08-05 22:00:08.129  INFO 10756 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-05 22:00:08.131  WARN 10756 --- [main] c.a.c.n.registry.NacosServiceRegistry    : No service to register for nacos client...
+2022-08-05 22:00:08.234  INFO 10756 --- [main] mao.service_acl.ServiceAclApplication    : Started ServiceAclApplication in 3.224 seconds (JVM running for 3.785)
+2022-08-05 22:01:42.987  WARN 10756 --- [Thread-10] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2022-08-05 22:01:42.987  WARN 10756 --- [Thread-4] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2022-08-05 22:01:42.987  WARN 10756 --- [Thread-10] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2022-08-05 22:01:42.988  WARN 10756 --- [Thread-4] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2022-08-05 22:01:43.014  INFO 10756 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'Nacos-Watch-Task-Scheduler'
+2022-08-05 22:01:43.015 ERROR 10756 --- [SpringContextShutdownHook] c.a.cloud.nacos.discovery.NacosWatch     : namingService unsubscribe failed, properties:NacosDiscoveryProperties{serverAddr='localhost:8848', endpoint='', namespace='', watchDelay=30000, logName='', service='', weight=1.0, clusterName='DEFAULT', group='DEFAULT_GROUP', namingLoadCacheAtStart='false', metadata={preserved.register.source=SPRING_CLOUD}, registerEnabled=true, ip='192.168.202.1', networkInterface='', port=8080, secure=false, accessKey='', secretKey='', heartBeatInterval=null, heartBeatTimeout=null, ipDeleteTimeout=null, failFast=true}
+
+java.lang.IllegalArgumentException: Param 'serviceName' is illegal, serviceName is blank
+	at com.alibaba.nacos.api.naming.utils.NamingUtils.getGroupedName(NamingUtils.java:47) ~[nacos-api-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.NacosNamingService.unsubscribe(NacosNamingService.java:479) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.cloud.nacos.discovery.NacosWatch.stop(NacosWatch.java:174) ~[spring-cloud-starter-alibaba-nacos-discovery-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at com.alibaba.cloud.nacos.discovery.NacosWatch.stop(NacosWatch.java:105) ~[spring-cloud-starter-alibaba-nacos-discovery-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:238) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$300(DefaultLifecycleProcessor.java:53) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:377) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:210) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:128) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1022) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:170) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:949) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+
+2022-08-05 22:01:43.028  INFO 10756 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-08-05 22:01:43.030  INFO 10756 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-08-05 22:01:43.031  INFO 10756 --- [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2022-08-05 22:01:43.032  WARN 10756 --- [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : No dom to de-register for nacos client...
+2022-08-05 22:01:46.055  WARN 10756 --- [SpringContextShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Destroy method 'close' on bean with name 'nacosServiceRegistry' threw an exception: java.lang.NullPointerException: Cannot invoke "com.alibaba.nacos.api.naming.NamingService.shutDown()" because "this.namingService" is null
+2022-08-05 22:01:46.057  INFO 10756 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-08-05 22:01:50.847  INFO 3948 --- [main] mao.service_acl.ServiceAclApplication    : No active profile set, falling back to default profiles: default
+2022-08-05 22:01:51.245  INFO 3948 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-08-05 22:01:51.246  INFO 3948 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-08-05 22:01:51.260  INFO 3948 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5ms. Found 0 Redis repository interfaces.
+2022-08-05 22:01:51.367  WARN 3948 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[mao.service_acl]' package. Please check your configuration.
+2022-08-05 22:01:51.412  INFO 3948 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=21fff6a5-fce1-3f2f-8db5-e950fca03553
+2022-08-05 22:01:51.631  INFO 3948 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-05 22:01:51.638  INFO 3948 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-05 22:01:51.639  INFO 3948 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2022-08-05 22:01:51.754  INFO 3948 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-05 22:01:51.755  INFO 3948 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 895 ms
+2022-08-05 22:01:51.797  WARN 3948 --- [main] o.s.c.n.a.ArchaiusAutoConfiguration      : No spring.application.name found, defaulting to 'application'
+2022-08-05 22:01:51.799  WARN 3948 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-05 22:01:51.800  INFO 3948 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-05 22:01:51.803  WARN 3948 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-05 22:01:51.803  INFO 3948 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-05 22:01:51.938  INFO 3948 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-08-05 22:01:52.115  INFO 3948 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'Nacos-Watch-Task-Scheduler'
+2022-08-05 22:01:52.146  INFO 3948 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-08-05 22:01:52.241  INFO 3948 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-08-05 22:01:52.698  INFO 3948 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 0be21c76-4243-4b76-8de5-9a03e8bde4bb
+
+2022-08-05 22:01:52.757  INFO 3948 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@528e5e38, org.springframework.security.web.context.SecurityContextPersistenceFilter@618f627b, org.springframework.security.web.header.HeaderWriterFilter@ab327c, org.springframework.security.web.csrf.CsrfFilter@4813d0, org.springframework.security.web.authentication.logout.LogoutFilter@405d8a80, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@59127611, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@59d5c537, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@16391278, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4269aad7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3e2d8623, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4cfc0c48, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@621dc63d, org.springframework.security.web.session.SessionManagementFilter@763b0996, org.springframework.security.web.access.ExceptionTranslationFilter@52433946, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2b1a901d]
+2022-08-05 22:01:52.988 ERROR 3948 --- [main] c.a.cloud.nacos.discovery.NacosWatch     : namingService subscribe failed, properties:NacosDiscoveryProperties{serverAddr='localhost:8848', endpoint='', namespace='', watchDelay=30000, logName='', service='', weight=1.0, clusterName='DEFAULT', group='DEFAULT_GROUP', namingLoadCacheAtStart='false', metadata={preserved.register.source=SPRING_CLOUD}, registerEnabled=true, ip='192.168.202.1', networkInterface='', port=-1, secure=false, accessKey='', secretKey='', heartBeatInterval=null, heartBeatTimeout=null, ipDeleteTimeout=null, failFast=true}
+
+java.lang.IllegalArgumentException: Param 'serviceName' is illegal, serviceName is blank
+	at com.alibaba.nacos.api.naming.utils.NamingUtils.getGroupedName(NamingUtils.java:47) ~[nacos-api-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.NacosNamingService.subscribe(NacosNamingService.java:457) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.cloud.nacos.discovery.NacosWatch.start(NacosWatch.java:131) ~[spring-cloud-starter-alibaba-nacos-discovery-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:182) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:53) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:360) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:158) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:122) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:895) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:554) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:405) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at mao.service_acl.ServiceAclApplication.main(ServiceAclApplication.java:16) ~[classes/:na]
+
+2022-08-05 22:01:53.023  INFO 3948 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-05 22:01:53.026  WARN 3948 --- [main] c.a.c.n.registry.NacosServiceRegistry    : No service to register for nacos client...
+2022-08-05 22:01:53.132  INFO 3948 --- [main] mao.service_acl.ServiceAclApplication    : Started ServiceAclApplication in 3.064 seconds (JVM running for 3.619)
+2022-08-05 22:04:36.655  WARN 3948 --- [Thread-4] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2022-08-05 22:04:36.655  WARN 3948 --- [Thread-10] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2022-08-05 22:04:36.656  WARN 3948 --- [Thread-10] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2022-08-05 22:04:36.656  WARN 3948 --- [Thread-4] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2022-08-05 22:04:36.679  INFO 3948 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'Nacos-Watch-Task-Scheduler'
+2022-08-05 22:04:36.679 ERROR 3948 --- [SpringContextShutdownHook] c.a.cloud.nacos.discovery.NacosWatch     : namingService unsubscribe failed, properties:NacosDiscoveryProperties{serverAddr='localhost:8848', endpoint='', namespace='', watchDelay=30000, logName='', service='', weight=1.0, clusterName='DEFAULT', group='DEFAULT_GROUP', namingLoadCacheAtStart='false', metadata={preserved.register.source=SPRING_CLOUD}, registerEnabled=true, ip='192.168.202.1', networkInterface='', port=8080, secure=false, accessKey='', secretKey='', heartBeatInterval=null, heartBeatTimeout=null, ipDeleteTimeout=null, failFast=true}
+
+java.lang.IllegalArgumentException: Param 'serviceName' is illegal, serviceName is blank
+	at com.alibaba.nacos.api.naming.utils.NamingUtils.getGroupedName(NamingUtils.java:47) ~[nacos-api-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.NacosNamingService.unsubscribe(NacosNamingService.java:479) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.cloud.nacos.discovery.NacosWatch.stop(NacosWatch.java:174) ~[spring-cloud-starter-alibaba-nacos-discovery-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at com.alibaba.cloud.nacos.discovery.NacosWatch.stop(NacosWatch.java:105) ~[spring-cloud-starter-alibaba-nacos-discovery-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:238) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$300(DefaultLifecycleProcessor.java:53) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:377) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:210) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:128) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1022) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:170) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:949) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+
+2022-08-05 22:04:36.696  INFO 3948 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-08-05 22:04:36.697  INFO 3948 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-08-05 22:04:36.697  INFO 3948 --- [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2022-08-05 22:04:36.697  WARN 3948 --- [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : No dom to de-register for nacos client...
+2022-08-05 22:04:39.714  WARN 3948 --- [SpringContextShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Destroy method 'close' on bean with name 'nacosServiceRegistry' threw an exception: java.lang.NullPointerException: Cannot invoke "com.alibaba.nacos.api.naming.NamingService.shutDown()" because "this.namingService" is null
+2022-08-05 22:04:39.715  INFO 3948 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-08-05 22:04:43.043  INFO 11872 --- [main] mao.service_acl.ServiceAclApplication    : No active profile set, falling back to default profiles: default
+2022-08-05 22:04:43.463  INFO 11872 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-08-05 22:04:43.464  INFO 11872 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-08-05 22:04:43.477  INFO 11872 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4ms. Found 0 Redis repository interfaces.
+2022-08-05 22:04:43.579  WARN 11872 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[mao.service_acl]' package. Please check your configuration.
+2022-08-05 22:04:43.621  INFO 11872 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=21fff6a5-fce1-3f2f-8db5-e950fca03553
+2022-08-05 22:04:43.843  INFO 11872 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-05 22:04:43.850  INFO 11872 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-05 22:04:43.850  INFO 11872 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2022-08-05 22:04:43.964  INFO 11872 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-05 22:04:43.965  INFO 11872 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 907 ms
+2022-08-05 22:04:44.008  WARN 11872 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-05 22:04:44.008  INFO 11872 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-05 22:04:44.011  WARN 11872 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-05 22:04:44.011  INFO 11872 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-05 22:04:44.147  INFO 11872 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-08-05 22:04:44.328  INFO 11872 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'Nacos-Watch-Task-Scheduler'
+2022-08-05 22:04:44.361  INFO 11872 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-08-05 22:04:44.453  INFO 11872 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-08-05 22:04:44.915  INFO 11872 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: f5a8aa35-d8dd-4cf3-aedd-0df4848c2c21
+
+2022-08-05 22:04:44.975  INFO 11872 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@305e95a4, org.springframework.security.web.context.SecurityContextPersistenceFilter@3d798e76, org.springframework.security.web.header.HeaderWriterFilter@347123dc, org.springframework.security.web.csrf.CsrfFilter@7e31d53b, org.springframework.security.web.authentication.logout.LogoutFilter@1c6ac73c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@280484c7, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5611bba, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@55e42684, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@344f9467, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@386e9fd8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@75dc1c1c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@18d610e1, org.springframework.security.web.session.SessionManagementFilter@5403431a, org.springframework.security.web.access.ExceptionTranslationFilter@1f7336b2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@298263fa]
+2022-08-05 22:04:45.304  INFO 11872 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-05 22:04:45.340 ERROR 11872 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, service-acl register failed...NacosRegistration{nacosDiscoveryProperties=NacosDiscoveryProperties{serverAddr='localhost:8848', endpoint='', namespace='', watchDelay=30000, logName='', service='service-acl', weight=1.0, clusterName='DEFAULT', group='DEFAULT_GROUP', namingLoadCacheAtStart='false', metadata={preserved.register.source=SPRING_CLOUD}, registerEnabled=true, ip='192.168.202.1', networkInterface='', port=8080, secure=false, accessKey='', secretKey='', heartBeatInterval=null, heartBeatTimeout=null, ipDeleteTimeout=null, failFast=true}},
+
+com.alibaba.nacos.api.exception.NacosException: failed to req API:/nacos/v1/ns/instance after all servers([localhost:8848]) tried: java.net.ConnectException: Connection refused: no further information
+	at com.alibaba.nacos.client.naming.net.NamingProxy.reqApi(NamingProxy.java:556) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.net.NamingProxy.reqApi(NamingProxy.java:498) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.net.NamingProxy.reqApi(NamingProxy.java:493) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.net.NamingProxy.registerService(NamingProxy.java:246) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.NacosNamingService.registerInstance(NacosNamingService.java:212) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.cloud.nacos.registry.NacosServiceRegistry.register(NacosServiceRegistry.java:74) ~[spring-cloud-starter-alibaba-nacos-discovery-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.register(AbstractAutoServiceRegistration.java:239) ~[spring-cloud-commons-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at com.alibaba.cloud.nacos.registry.NacosAutoServiceRegistration.register(NacosAutoServiceRegistration.java:78) ~[spring-cloud-starter-alibaba-nacos-discovery-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.start(AbstractAutoServiceRegistration.java:138) ~[spring-cloud-commons-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.bind(AbstractAutoServiceRegistration.java:101) ~[spring-cloud-commons-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.onApplicationEvent(AbstractAutoServiceRegistration.java:88) ~[spring-cloud-commons-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.onApplicationEvent(AbstractAutoServiceRegistration.java:47) ~[spring-cloud-commons-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:404) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:361) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:46) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:182) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:53) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:360) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:158) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:122) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:895) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:554) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:405) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at mao.service_acl.ServiceAclApplication.main(ServiceAclApplication.java:16) ~[classes/:na]
+
+2022-08-05 22:04:45.341  WARN 11872 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is java.lang.reflect.UndeclaredThrowableException
+2022-08-05 22:04:45.356  INFO 11872 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-08-05 22:04:45.357  INFO 11872 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-08-05 22:04:55.193  INFO 11872 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-08-05 22:04:55.210  INFO 11872 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-05 22:04:55.227  INFO 11872 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-08-05 22:04:55.234 ERROR 11872 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is java.lang.reflect.UndeclaredThrowableException
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:185) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:53) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:360) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:158) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:122) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:895) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:554) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:405) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at mao.service_acl.ServiceAclApplication.main(ServiceAclApplication.java:16) ~[classes/:na]
+Caused by: java.lang.reflect.UndeclaredThrowableException: null
+	at org.springframework.util.ReflectionUtils.rethrowRuntimeException(ReflectionUtils.java:147) ~[spring-core-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at com.alibaba.cloud.nacos.registry.NacosServiceRegistry.register(NacosServiceRegistry.java:82) ~[spring-cloud-starter-alibaba-nacos-discovery-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.register(AbstractAutoServiceRegistration.java:239) ~[spring-cloud-commons-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at com.alibaba.cloud.nacos.registry.NacosAutoServiceRegistration.register(NacosAutoServiceRegistration.java:78) ~[spring-cloud-starter-alibaba-nacos-discovery-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.start(AbstractAutoServiceRegistration.java:138) ~[spring-cloud-commons-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.bind(AbstractAutoServiceRegistration.java:101) ~[spring-cloud-commons-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.onApplicationEvent(AbstractAutoServiceRegistration.java:88) ~[spring-cloud-commons-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.onApplicationEvent(AbstractAutoServiceRegistration.java:47) ~[spring-cloud-commons-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:404) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:361) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:46) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:182) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	... 14 common frames omitted
+Caused by: com.alibaba.nacos.api.exception.NacosException: failed to req API:/nacos/v1/ns/instance after all servers([localhost:8848]) tried: java.net.ConnectException: Connection refused: no further information
+	at com.alibaba.nacos.client.naming.net.NamingProxy.reqApi(NamingProxy.java:556) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.net.NamingProxy.reqApi(NamingProxy.java:498) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.net.NamingProxy.reqApi(NamingProxy.java:493) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.net.NamingProxy.registerService(NamingProxy.java:246) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.NacosNamingService.registerInstance(NacosNamingService.java:212) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.cloud.nacos.registry.NacosServiceRegistry.register(NacosServiceRegistry.java:74) ~[spring-cloud-starter-alibaba-nacos-discovery-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	... 27 common frames omitted
+
