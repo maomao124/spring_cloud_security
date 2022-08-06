@@ -9,13 +9,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="service_acl" />
         <module name="gateway" />
-        <module name="base" />
       </profile>
       <profile name="Annotation profile for spring_cloud_security" enabled="true">
         <sourceOutputDir name="../../target/generated-sources/annotations" />
         <sourceTestOutputDir name="../../target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring_security" />
+        <module name="base" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

@@ -1,13 +1,14 @@
-package utils.hander;
+package utils.handler;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
 /**
  * Project name(项目名称)：spring_cloud_security
- * Package(包名): utils.hander
+ * Package(包名): utils.handler
  * Class(类名): MyMetaObjectHandler
  * Author(作者）: mao
  * Author QQ：1296193245

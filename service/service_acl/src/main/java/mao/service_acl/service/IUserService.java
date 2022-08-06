@@ -11,6 +11,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author mao
  * @since 2022-08-05
  */
-public interface IUserService extends IService<User> {
-
+public interface IUserService extends IService<User>
+{
+    // 从数据库中取出用户信息
+    User selectByUsername(String username);
 }
