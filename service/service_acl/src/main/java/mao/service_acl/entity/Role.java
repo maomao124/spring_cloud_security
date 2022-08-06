@@ -1,6 +1,6 @@
 package mao.service_acl.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -26,6 +26,7 @@ public class Role implements Serializable
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty("角色id")
+    @TableId(value = "id", type = IdType.AUTO)
     private String id;
 
     @ApiModelProperty("角色名称")
@@ -40,9 +41,11 @@ public class Role implements Serializable
     @ApiModelProperty("逻辑删除 1（true）已删除， 0（false）未删除")
     private Integer isDeleted;
 
+    @TableField(fill = FieldFill.INSERT)
     @ApiModelProperty("创建时间")
     private LocalDateTime gmtCreate;
 
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     @ApiModelProperty("更新时间")
     private LocalDateTime gmtModified;
 

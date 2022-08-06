@@ -1,12 +1,14 @@
 package mao.service_acl.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+
 
 /**
  * <p>
@@ -26,6 +28,7 @@ public class Permission implements Serializable
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty("编号")
+    @TableId(value = "id", type = IdType.AUTO)
     private String id;
 
     @ApiModelProperty("所属上级")
@@ -52,13 +55,27 @@ public class Permission implements Serializable
     @ApiModelProperty("状态(0:禁止,1:正常)")
     private Integer status;
 
+    @ApiModelProperty(value = "层级")
+    @TableField(exist = false)
+    private Integer level;
+
+    @ApiModelProperty(value = "下级")
+    @TableField(exist = false)
+    private List<Permission> children;
+
+    @ApiModelProperty(value = "是否选中")
+    @TableField(exist = false)
+    private boolean isSelect;
+
     @ApiModelProperty("逻辑删除 1（true）已删除， 0（false）未删除")
     private Integer isDeleted;
 
     @ApiModelProperty("创建时间")
+    @TableField(fill = FieldFill.INSERT)
     private LocalDateTime gmtCreate;
 
     @ApiModelProperty("更新时间")
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime gmtModified;
 
 
@@ -302,6 +319,66 @@ public class Permission implements Serializable
         this.gmtModified = gmtModified;
     }
 
+    /**
+     * Gets level.
+     *
+     * @return the level
+     */
+    public Integer getLevel()
+    {
+        return level;
+    }
+
+    /**
+     * Sets level.
+     *
+     * @param level the level
+     */
+    public void setLevel(Integer level)
+    {
+        this.level = level;
+    }
+
+    /**
+     * Gets children.
+     *
+     * @return the children
+     */
+    public List<Permission> getChildren()
+    {
+        return children;
+    }
+
+    /**
+     * Sets children.
+     *
+     * @param children the children
+     */
+    public void setChildren(List<Permission> children)
+    {
+        this.children = children;
+    }
+
+    /**
+     * Is select boolean.
+     *
+     * @return the boolean
+     */
+    public boolean isSelect()
+    {
+        return isSelect;
+    }
+
+    /**
+     * Sets select.
+     *
+     * @param select the select
+     */
+    public void setSelect(boolean select)
+    {
+        isSelect = select;
+    }
+
     @Override
     public boolean equals(Object o)
     {
@@ -316,6 +393,10 @@ public class Permission implements Serializable
 
         Permission that = (Permission) o;
 
+        if (isSelect() != that.isSelect())
+        {
+            return false;
+        }
         if (getId() != null ? !getId().equals(that.getId()) : that.getId() != null)
         {
             return false;
@@ -352,6 +433,14 @@ public class Permission implements Serializable
         {
             return false;
         }
+        if (getLevel() != null ? !getLevel().equals(that.getLevel()) : that.getLevel() != null)
+        {
+            return false;
+        }
+        if (getChildren() != null ? !getChildren().equals(that.getChildren()) : that.getChildren() != null)
+        {
+            return false;
+        }
         if (getIsDeleted() != null ? !getIsDeleted().equals(that.getIsDeleted()) : that.getIsDeleted() != null)
         {
             return false;
@@ -375,12 +464,14 @@ public class Permission implements Serializable
         result = 31 * result + (getComponent() != null ? getComponent().hashCode() : 0);
         result = 31 * result + (getIcon() != null ? getIcon().hashCode() : 0);
         result = 31 * result + (getStatus() != null ? getStatus().hashCode() : 0);
+        result = 31 * result + (getLevel() != null ? getLevel().hashCode() : 0);
+        result = 31 * result + (getChildren() != null ? getChildren().hashCode() : 0);
+        result = 31 * result + (isSelect() ? 1 : 0);
         result = 31 * result + (getIsDeleted() != null ? getIsDeleted().hashCode() : 0);
         result = 31 * result + (getGmtCreate() != null ? getGmtCreate().hashCode() : 0);
         result = 31 * result + (getGmtModified() != null ? getGmtModified().hashCode() : 0);
         return result;
     }
-
 
     @Override
     @SuppressWarnings("all")
@@ -396,6 +487,9 @@ public class Permission implements Serializable
         stringbuilder.append("component：").append(component).append('\n');
         stringbuilder.append("icon：").append(icon).append('\n');
         stringbuilder.append("status：").append(status).append('\n');
+        stringbuilder.append("level：").append(level).append('\n');
+        stringbuilder.append("children：").append(children).append('\n');
+        stringbuilder.append("isSelect：").append(isSelect).append('\n');
         stringbuilder.append("isDeleted：").append(isDeleted).append('\n');
         stringbuilder.append("gmtCreate：").append(gmtCreate).append('\n');
         stringbuilder.append("gmtModified：").append(gmtModified).append('\n');
