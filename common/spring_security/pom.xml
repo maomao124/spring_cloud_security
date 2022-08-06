@@ -47,13 +47,13 @@
         <!-- spring mao.spring_security.security 安全框架依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-mao.spring_security.security</artifactId>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
         <!-- spring mao.spring_security.security 安全框架测试依赖 -->
         <dependency>
-            <groupId>org.springframework.mao.spring_security.security</groupId>
-            <artifactId>spring-mao.spring_security.security-test</artifactId>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
 
