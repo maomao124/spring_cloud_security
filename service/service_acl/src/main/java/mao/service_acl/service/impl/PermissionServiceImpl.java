@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import mao.service_acl.entity.Permission;
 import mao.service_acl.entity.RolePermission;
 import mao.service_acl.entity.User;
+import mao.service_acl.helper.MenuHelper;
+import mao.service_acl.helper.PermissionHelper;
 import mao.service_acl.mapper.PermissionMapper;
 import mao.service_acl.service.IPermissionService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -148,8 +150,8 @@ public class PermissionServiceImpl extends ServiceImpl<PermissionMapper, Permiss
             selectPermissionList = baseMapper.selectPermissionByUserId(userId);
         }
 
-        List<Permission> permissionList = PermissionHelper.bulid(selectPermissionList);
-        List<JSONObject> result = MemuHelper.bulid(permissionList);
+        List<Permission> permissionList = PermissionHelper.build(selectPermissionList);
+        List<JSONObject> result = MenuHelper.build(permissionList);
         return result;
     }
 
