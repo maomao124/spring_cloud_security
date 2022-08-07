@@ -26,7 +26,7 @@ import java.util.List;
  * Description(描述)： 无
  */
 
-@Service
+@Service("userDetailsService")
 public class UserDetailsServiceImpl implements UserDetailsService
 {
 

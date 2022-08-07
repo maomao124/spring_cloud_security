@@ -19,6 +19,7 @@ import java.util.Date;
  * Description(描述)： 无
  */
 
+@Component
 public class MyMetaObjectHandler implements MetaObjectHandler
 {
 

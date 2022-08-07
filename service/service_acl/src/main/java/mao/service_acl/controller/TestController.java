@@ -19,9 +19,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController
 {
-    @GetMapping("/test/")
+    @GetMapping("/test")
     public String test()
     {
         return "test";
+    }
+
+    @GetMapping("/test1")
+    public String test1()
+    {
+        throw new RuntimeException("异常");
     }
 }
