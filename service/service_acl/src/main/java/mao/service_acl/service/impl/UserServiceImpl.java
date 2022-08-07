@@ -1,5 +1,6 @@
 package mao.service_acl.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import mao.service_acl.entity.User;
 import mao.service_acl.mapper.UserMapper;
 import mao.service_acl.service.IUserService;
@@ -21,6 +22,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Override
     public User selectByUsername(String username)
     {
-        return null;
+        return baseMapper.selectOne(new QueryWrapper<User>().eq("username", username));
     }
 }
