@@ -1,5 +1,6 @@
 package mao.service_acl.service.impl;
 
+import lombok.extern.slf4j.Slf4j;
 import mao.service_acl.entity.User;
 import mao.service_acl.service.IPermissionService;
 import mao.service_acl.service.IUserService;
@@ -11,6 +12,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 /**
@@ -26,7 +28,8 @@ import java.util.List;
  * Description(描述)： 无
  */
 
-@Service("userDetailsService")
+@Slf4j
+@Service
 public class UserDetailsServiceImpl implements UserDetailsService
 {
 
@@ -39,6 +42,7 @@ public class UserDetailsServiceImpl implements UserDetailsService
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException
     {
+        log.debug("进入UserDetailsService");
         //根据用户名查询数据
         User user = userService.selectByUsername(username);
         //判断
@@ -55,5 +59,11 @@ public class UserDetailsServiceImpl implements UserDetailsService
         securityUser.setCurrentUserInfo(curUser);
         securityUser.setPermissionValueList(permissionValueList);
         return securityUser;
+    }
+
+    @PostConstruct
+    public void init()
+    {
+        log.debug("加载UserDetailsServiceImpl");
     }
 }
