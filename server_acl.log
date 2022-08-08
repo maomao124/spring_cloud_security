@@ -2015,3 +2015,330 @@ Using generated security password: ff6b70b1-45f3-44e3-a933-b02ff61347d3
 2022-08-08 21:01:43.426  INFO 9608 --- [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
 2022-08-08 21:01:48.356  WARN 9608 --- [SpringContextShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Destroy method 'close' on bean with name 'nacosServiceRegistry' threw an exception: java.lang.NullPointerException: Cannot invoke "com.alibaba.nacos.api.naming.NamingService.shutDown()" because "this.namingService" is null
 2022-08-08 21:01:48.357  INFO 9608 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-08-08 21:01:53.596  INFO 10396 --- [main] mao.service_acl.ServiceAclApplication    : No active profile set, falling back to default profiles: default
+2022-08-08 21:01:54.067  INFO 10396 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-08-08 21:01:54.069  INFO 10396 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-08-08 21:01:54.107  INFO 10396 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 0 Redis repository interfaces.
+2022-08-08 21:01:54.253  INFO 10396 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9c65fbb6-a726-35d5-8fc8-612e91c14cc3
+2022-08-08 21:01:54.335  INFO 10396 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5edc70ed' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-08 21:01:54.339  INFO 10396 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-08 21:01:54.557  INFO 10396 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8084 (http)
+2022-08-08 21:01:54.564  INFO 10396 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-08 21:01:54.564  INFO 10396 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2022-08-08 21:01:54.682  INFO 10396 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-08 21:01:54.682  INFO 10396 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1068 ms
+2022-08-08 21:01:54.908  INFO 10396 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: e7636912-cb5e-4b39-9d2e-9b6bee7a8001
+
+2022-08-08 21:01:54.958 DEBUG 10396 --- [main] m.s.config.TokenSecurityConfig           : 加载TokenSecurityConfig
+2022-08-08 21:01:55.038  INFO 10396 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/api/**'], []
+2022-08-08 21:01:55.038  INFO 10396 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/test1'], []
+2022-08-08 21:01:55.070  INFO 10396 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29bd85db, org.springframework.security.web.context.SecurityContextPersistenceFilter@7a358613, org.springframework.security.web.header.HeaderWriterFilter@5345dfe8, org.springframework.security.web.authentication.logout.LogoutFilter@24e5389c, mao.spring_security.filter.TokenLoginFilter@7caf1e5, mao.spring_security.filter.TokenAuthFilter@5c234920, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5d7f8467, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@52621501, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1abcd059, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ddeb27f, org.springframework.security.web.session.SessionManagementFilter@4a1dda83, org.springframework.security.web.access.ExceptionTranslationFilter@49b89425, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4e17442f]
+2022-08-08 21:01:55.088  WARN 10396 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-08 21:01:55.088  INFO 10396 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-08 21:01:55.091  WARN 10396 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-08 21:01:55.091  INFO 10396 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-08 21:01:55.214  INFO 10396 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-08-08 21:01:55.433  INFO 10396 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'Nacos-Watch-Task-Scheduler'
+2022-08-08 21:01:55.468  INFO 10396 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-08-08 21:01:55.562  INFO 10396 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-08-08 21:01:56.561  INFO 10396 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8084 (http) with context path ''
+2022-08-08 21:01:56.569  INFO 10396 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP service-acl 192.168.202.1:8084 register finished
+2022-08-08 21:01:56.673  INFO 10396 --- [main] mao.service_acl.ServiceAclApplication    : Started ServiceAclApplication in 3.958 seconds (JVM running for 4.55)
+2022-08-08 21:02:23.618  INFO 10396 --- [http-nio-8084-exec-8] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-08 21:02:23.618  INFO 10396 --- [http-nio-8084-exec-8] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-08 21:02:23.622  INFO 10396 --- [http-nio-8084-exec-8] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2022-08-08 21:02:23.633 DEBUG 10396 --- [http-nio-8084-exec-8] m.s.filter.TokenLoginFilter              : Request is to process authentication
+2022-08-08 21:02:23.633 DEBUG 10396 --- [http-nio-8084-exec-8] m.s.filter.TokenLoginFilter              : 开始获取表单提交的用户名和密码
+2022-08-08 21:02:23.642 DEBUG 10396 --- [http-nio-8084-exec-8] m.s.filter.TokenLoginFilter              : 认证失败
+2022-08-08 21:02:24.657 DEBUG 10396 --- [http-nio-8084-exec-9] m.s.filter.TokenLoginFilter              : Request is to process authentication
+2022-08-08 21:02:24.658 DEBUG 10396 --- [http-nio-8084-exec-9] m.s.filter.TokenLoginFilter              : 开始获取表单提交的用户名和密码
+2022-08-08 21:02:24.659 DEBUG 10396 --- [http-nio-8084-exec-9] m.s.filter.TokenLoginFilter              : 认证失败
+2022-08-08 21:02:25.344 DEBUG 10396 --- [http-nio-8084-exec-10] m.s.filter.TokenLoginFilter              : Request is to process authentication
+2022-08-08 21:02:25.345 DEBUG 10396 --- [http-nio-8084-exec-10] m.s.filter.TokenLoginFilter              : 开始获取表单提交的用户名和密码
+2022-08-08 21:02:25.346 DEBUG 10396 --- [http-nio-8084-exec-10] m.s.filter.TokenLoginFilter              : 认证失败
+2022-08-08 21:07:48.189 DEBUG 10396 --- [http-nio-8084-exec-6] m.s.filter.TokenLoginFilter              : Request is to process authentication
+2022-08-08 21:07:48.189 DEBUG 10396 --- [http-nio-8084-exec-6] m.s.filter.TokenLoginFilter              : 开始获取表单提交的用户名和密码
+2022-08-08 21:07:48.191 DEBUG 10396 --- [http-nio-8084-exec-6] m.s.filter.TokenLoginFilter              : 认证失败
+2022-08-08 21:07:52.215 DEBUG 10396 --- [http-nio-8084-exec-10] m.s.filter.TokenLoginFilter              : Request is to process authentication
+2022-08-08 21:07:52.216 DEBUG 10396 --- [http-nio-8084-exec-10] m.s.filter.TokenLoginFilter              : 开始获取表单提交的用户名和密码
+2022-08-08 21:07:52.217 DEBUG 10396 --- [http-nio-8084-exec-10] m.s.filter.TokenLoginFilter              : 认证失败
+2022-08-08 21:09:23.483  WARN 10396 --- [Thread-4] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2022-08-08 21:09:23.483  WARN 10396 --- [Thread-10] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2022-08-08 21:09:23.483  WARN 10396 --- [Thread-10] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2022-08-08 21:09:23.484  WARN 10396 --- [Thread-4] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2022-08-08 21:09:23.505  INFO 10396 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'Nacos-Watch-Task-Scheduler'
+2022-08-08 21:09:23.508  INFO 10396 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-08-08 21:09:23.509  INFO 10396 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-08-08 21:09:23.509  INFO 10396 --- [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2022-08-08 21:09:23.513  INFO 10396 --- [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+2022-08-08 21:09:29.572  WARN 10396 --- [SpringContextShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Destroy method 'close' on bean with name 'nacosServiceRegistry' threw an exception: java.lang.NullPointerException: Cannot invoke "com.alibaba.nacos.api.naming.NamingService.shutDown()" because "this.namingService" is null
+2022-08-08 21:09:29.572  INFO 10396 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-08-08 21:15:03.163  INFO 6228 --- [main] mao.service_acl.ServiceAclApplication    : No active profile set, falling back to default profiles: default
+2022-08-08 21:15:03.602  INFO 6228 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-08-08 21:15:03.604  INFO 6228 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-08-08 21:15:03.644  INFO 6228 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30ms. Found 0 Redis repository interfaces.
+2022-08-08 21:15:03.796  INFO 6228 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9c65fbb6-a726-35d5-8fc8-612e91c14cc3
+2022-08-08 21:15:03.879  INFO 6228 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5478ce1e' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-08 21:15:03.883  INFO 6228 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-08 21:15:04.084  INFO 6228 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8084 (http)
+2022-08-08 21:15:04.092  INFO 6228 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-08 21:15:04.092  INFO 6228 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2022-08-08 21:15:04.215  INFO 6228 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-08 21:15:04.215  INFO 6228 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1031 ms
+2022-08-08 21:15:04.454  INFO 6228 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 1abe04c1-abe2-4a22-8bb8-d9871c3c578c
+
+2022-08-08 21:15:04.503 DEBUG 6228 --- [main] m.s.config.TokenSecurityConfig           : 加载TokenSecurityConfig
+2022-08-08 21:15:04.578  INFO 6228 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/api/**'], []
+2022-08-08 21:15:04.579  INFO 6228 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/test1'], []
+2022-08-08 21:15:04.611  INFO 6228 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29bd85db, org.springframework.security.web.context.SecurityContextPersistenceFilter@7a358613, org.springframework.security.web.header.HeaderWriterFilter@5345dfe8, org.springframework.security.web.authentication.logout.LogoutFilter@24e5389c, mao.spring_security.filter.TokenLoginFilter@7caf1e5, mao.spring_security.filter.TokenAuthFilter@5c234920, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5d7f8467, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@52621501, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1abcd059, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ddeb27f, org.springframework.security.web.session.SessionManagementFilter@4a1dda83, org.springframework.security.web.access.ExceptionTranslationFilter@49b89425, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4e17442f]
+2022-08-08 21:15:04.629  WARN 6228 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-08 21:15:04.629  INFO 6228 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-08 21:15:04.632  WARN 6228 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-08 21:15:04.632  INFO 6228 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-08 21:15:04.759  INFO 6228 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-08-08 21:15:04.982  INFO 6228 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'Nacos-Watch-Task-Scheduler'
+2022-08-08 21:15:05.021  INFO 6228 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-08-08 21:15:05.120  INFO 6228 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-08-08 21:15:06.052  INFO 6228 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8084 (http) with context path ''
+2022-08-08 21:15:06.061 ERROR 6228 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, service-acl register failed...NacosRegistration{nacosDiscoveryProperties=NacosDiscoveryProperties{serverAddr='localhost:8848', endpoint='', namespace='', watchDelay=30000, logName='', service='service-acl', weight=1.0, clusterName='DEFAULT', group='DEFAULT_GROUP', namingLoadCacheAtStart='false', metadata={preserved.register.source=SPRING_CLOUD}, registerEnabled=true, ip='192.168.202.1', networkInterface='', port=8084, secure=false, accessKey='', secretKey='', heartBeatInterval=null, heartBeatTimeout=null, ipDeleteTimeout=null, failFast=true}},
+
+com.alibaba.nacos.api.exception.NacosException: failed to req API:/nacos/v1/ns/instance after all servers([localhost:8848]) tried: java.net.ConnectException: Connection refused: no further information
+	at com.alibaba.nacos.client.naming.net.NamingProxy.reqApi(NamingProxy.java:556) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.net.NamingProxy.reqApi(NamingProxy.java:498) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.net.NamingProxy.reqApi(NamingProxy.java:493) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.net.NamingProxy.registerService(NamingProxy.java:246) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.NacosNamingService.registerInstance(NacosNamingService.java:212) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.cloud.nacos.registry.NacosServiceRegistry.register(NacosServiceRegistry.java:74) ~[spring-cloud-starter-alibaba-nacos-discovery-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.register(AbstractAutoServiceRegistration.java:239) ~[spring-cloud-commons-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at com.alibaba.cloud.nacos.registry.NacosAutoServiceRegistration.register(NacosAutoServiceRegistration.java:78) ~[spring-cloud-starter-alibaba-nacos-discovery-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.start(AbstractAutoServiceRegistration.java:138) ~[spring-cloud-commons-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.bind(AbstractAutoServiceRegistration.java:101) ~[spring-cloud-commons-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.onApplicationEvent(AbstractAutoServiceRegistration.java:88) ~[spring-cloud-commons-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.onApplicationEvent(AbstractAutoServiceRegistration.java:47) ~[spring-cloud-commons-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:404) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:361) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:46) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:182) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:53) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:360) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:158) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:122) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:895) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:554) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:405) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at mao.service_acl.ServiceAclApplication.main(ServiceAclApplication.java:17) ~[classes/:na]
+
+2022-08-08 21:15:06.062  WARN 6228 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is java.lang.reflect.UndeclaredThrowableException
+2022-08-08 21:15:06.064  INFO 6228 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-08-08 21:15:06.065  INFO 6228 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-08-08 21:15:13.085  INFO 6228 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-08-08 21:15:13.146  INFO 6228 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-08 21:15:13.167  INFO 6228 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-08-08 21:15:13.177 ERROR 6228 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is java.lang.reflect.UndeclaredThrowableException
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:185) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:53) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:360) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:158) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:122) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:895) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:554) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:405) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at mao.service_acl.ServiceAclApplication.main(ServiceAclApplication.java:17) ~[classes/:na]
+Caused by: java.lang.reflect.UndeclaredThrowableException: null
+	at org.springframework.util.ReflectionUtils.rethrowRuntimeException(ReflectionUtils.java:147) ~[spring-core-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at com.alibaba.cloud.nacos.registry.NacosServiceRegistry.register(NacosServiceRegistry.java:82) ~[spring-cloud-starter-alibaba-nacos-discovery-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.register(AbstractAutoServiceRegistration.java:239) ~[spring-cloud-commons-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at com.alibaba.cloud.nacos.registry.NacosAutoServiceRegistration.register(NacosAutoServiceRegistration.java:78) ~[spring-cloud-starter-alibaba-nacos-discovery-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.start(AbstractAutoServiceRegistration.java:138) ~[spring-cloud-commons-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.bind(AbstractAutoServiceRegistration.java:101) ~[spring-cloud-commons-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.onApplicationEvent(AbstractAutoServiceRegistration.java:88) ~[spring-cloud-commons-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.onApplicationEvent(AbstractAutoServiceRegistration.java:47) ~[spring-cloud-commons-2.2.7.RELEASE.jar:2.2.7.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:404) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:361) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:46) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:182) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	... 14 common frames omitted
+Caused by: com.alibaba.nacos.api.exception.NacosException: failed to req API:/nacos/v1/ns/instance after all servers([localhost:8848]) tried: java.net.ConnectException: Connection refused: no further information
+	at com.alibaba.nacos.client.naming.net.NamingProxy.reqApi(NamingProxy.java:556) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.net.NamingProxy.reqApi(NamingProxy.java:498) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.net.NamingProxy.reqApi(NamingProxy.java:493) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.net.NamingProxy.registerService(NamingProxy.java:246) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.nacos.client.naming.NacosNamingService.registerInstance(NacosNamingService.java:212) ~[nacos-client-1.4.2.jar:na]
+	at com.alibaba.cloud.nacos.registry.NacosServiceRegistry.register(NacosServiceRegistry.java:74) ~[spring-cloud-starter-alibaba-nacos-discovery-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	... 27 common frames omitted
+
+2022-08-08 21:15:55.787  WARN 6228 --- [Thread-4] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2022-08-08 21:15:55.787  WARN 6228 --- [Thread-10] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2022-08-08 21:15:55.787  WARN 6228 --- [Thread-10] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2022-08-08 21:15:55.787  WARN 6228 --- [Thread-4] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2022-08-08 21:16:02.660  INFO 18160 --- [main] mao.service_acl.ServiceAclApplication    : No active profile set, falling back to default profiles: default
+2022-08-08 21:16:03.093  INFO 18160 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-08-08 21:16:03.095  INFO 18160 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-08-08 21:16:03.137  INFO 18160 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32ms. Found 0 Redis repository interfaces.
+2022-08-08 21:16:03.291  INFO 18160 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9c65fbb6-a726-35d5-8fc8-612e91c14cc3
+2022-08-08 21:16:03.365  INFO 18160 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5478ce1e' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-08 21:16:03.369  INFO 18160 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-08-08 21:16:03.567  INFO 18160 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8084 (http)
+2022-08-08 21:16:03.574  INFO 18160 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-08 21:16:03.574  INFO 18160 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2022-08-08 21:16:03.700  INFO 18160 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-08 21:16:03.700  INFO 18160 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1019 ms
+2022-08-08 21:16:03.925  INFO 18160 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 7aecb9f1-2683-4aa0-b6f7-1406dac6618d
+
+2022-08-08 21:16:03.971 DEBUG 18160 --- [main] m.s.config.TokenSecurityConfig           : 加载TokenSecurityConfig
+2022-08-08 21:16:04.043  INFO 18160 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/api/**'], []
+2022-08-08 21:16:04.043  INFO 18160 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/test1'], []
+2022-08-08 21:16:04.072  INFO 18160 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@681de87f, org.springframework.security.web.context.SecurityContextPersistenceFilter@7a358613, org.springframework.security.web.header.HeaderWriterFilter@5345dfe8, org.springframework.security.web.authentication.logout.LogoutFilter@24e5389c, mao.spring_security.filter.TokenLoginFilter@2eb1c615, mao.spring_security.filter.TokenAuthFilter@2674d4f6, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@38087342, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@52621501, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1abcd059, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5d9d2119, org.springframework.security.web.session.SessionManagementFilter@4a1dda83, org.springframework.security.web.access.ExceptionTranslationFilter@49b89425, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4e17442f]
+2022-08-08 21:16:04.089  WARN 18160 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-08 21:16:04.089  INFO 18160 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-08 21:16:04.092  WARN 18160 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-08-08 21:16:04.092  INFO 18160 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-08-08 21:16:04.219  INFO 18160 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-08-08 21:16:04.431  INFO 18160 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'Nacos-Watch-Task-Scheduler'
+2022-08-08 21:16:04.465  INFO 18160 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-08-08 21:16:04.560  INFO 18160 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-08-08 21:16:05.477  INFO 18160 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8084 (http) with context path ''
+2022-08-08 21:16:05.492  INFO 18160 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP service-acl 192.168.202.1:8084 register finished
+2022-08-08 21:16:05.615  INFO 18160 --- [main] mao.service_acl.ServiceAclApplication    : Started ServiceAclApplication in 3.883 seconds (JVM running for 4.5)
+2022-08-08 21:16:16.030  INFO 18160 --- [http-nio-8084-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-08 21:16:16.030  INFO 18160 --- [http-nio-8084-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-08 21:16:16.035  INFO 18160 --- [http-nio-8084-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2022-08-08 21:16:16.048 DEBUG 18160 --- [http-nio-8084-exec-2] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:16:16.048 DEBUG 18160 --- [http-nio-8084-exec-2] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:24.520 DEBUG 18160 --- [http-nio-8084-exec-8] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:24.520 DEBUG 18160 --- [http-nio-8084-exec-8] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:24.650 DEBUG 18160 --- [http-nio-8084-exec-9] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:24.650 DEBUG 18160 --- [http-nio-8084-exec-9] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:34.145 DEBUG 18160 --- [http-nio-8084-exec-8] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:34.145 DEBUG 18160 --- [http-nio-8084-exec-8] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:34.222 DEBUG 18160 --- [http-nio-8084-exec-9] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:34.222 DEBUG 18160 --- [http-nio-8084-exec-9] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:34.573 DEBUG 18160 --- [http-nio-8084-exec-10] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:34.573 DEBUG 18160 --- [http-nio-8084-exec-10] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:34.647 DEBUG 18160 --- [http-nio-8084-exec-1] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:34.647 DEBUG 18160 --- [http-nio-8084-exec-1] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:34.782 DEBUG 18160 --- [http-nio-8084-exec-2] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:34.782 DEBUG 18160 --- [http-nio-8084-exec-2] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:34.869 DEBUG 18160 --- [http-nio-8084-exec-3] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:34.869 DEBUG 18160 --- [http-nio-8084-exec-3] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:34.943 DEBUG 18160 --- [http-nio-8084-exec-4] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:34.944 DEBUG 18160 --- [http-nio-8084-exec-4] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:35.018 DEBUG 18160 --- [http-nio-8084-exec-5] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:35.018 DEBUG 18160 --- [http-nio-8084-exec-5] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:39.953 DEBUG 18160 --- [http-nio-8084-exec-1] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:39.953 DEBUG 18160 --- [http-nio-8084-exec-1] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:49.635 DEBUG 18160 --- [http-nio-8084-exec-10] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:49.635 DEBUG 18160 --- [http-nio-8084-exec-10] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:49.712 DEBUG 18160 --- [http-nio-8084-exec-1] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:49.713 DEBUG 18160 --- [http-nio-8084-exec-1] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:51.753 DEBUG 18160 --- [http-nio-8084-exec-4] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:51.753 DEBUG 18160 --- [http-nio-8084-exec-4] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:51.849 DEBUG 18160 --- [http-nio-8084-exec-5] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:51.850 DEBUG 18160 --- [http-nio-8084-exec-5] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:56.923 DEBUG 18160 --- [http-nio-8084-exec-10] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:56.924 DEBUG 18160 --- [http-nio-8084-exec-10] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:57.019 DEBUG 18160 --- [http-nio-8084-exec-1] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:57.020 DEBUG 18160 --- [http-nio-8084-exec-1] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:57.177 DEBUG 18160 --- [http-nio-8084-exec-2] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:57.177 DEBUG 18160 --- [http-nio-8084-exec-2] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:57.265 DEBUG 18160 --- [http-nio-8084-exec-3] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:57.265 DEBUG 18160 --- [http-nio-8084-exec-3] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:57.403 DEBUG 18160 --- [http-nio-8084-exec-4] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:57.403 DEBUG 18160 --- [http-nio-8084-exec-4] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:57.476 DEBUG 18160 --- [http-nio-8084-exec-5] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:57.476 DEBUG 18160 --- [http-nio-8084-exec-5] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:57.565 DEBUG 18160 --- [http-nio-8084-exec-6] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:57.565 DEBUG 18160 --- [http-nio-8084-exec-6] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:57.637 DEBUG 18160 --- [http-nio-8084-exec-7] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:57.637 DEBUG 18160 --- [http-nio-8084-exec-7] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:57.734 DEBUG 18160 --- [http-nio-8084-exec-8] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:57.734 DEBUG 18160 --- [http-nio-8084-exec-8] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:57.826 DEBUG 18160 --- [http-nio-8084-exec-9] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:57.826 DEBUG 18160 --- [http-nio-8084-exec-9] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:57.905 DEBUG 18160 --- [http-nio-8084-exec-10] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:57.906 DEBUG 18160 --- [http-nio-8084-exec-10] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:57.974 DEBUG 18160 --- [http-nio-8084-exec-2] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:57.975 DEBUG 18160 --- [http-nio-8084-exec-2] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:58.078 DEBUG 18160 --- [http-nio-8084-exec-3] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:58.078 DEBUG 18160 --- [http-nio-8084-exec-3] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:17:58.149 DEBUG 18160 --- [http-nio-8084-exec-4] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:17:58.150 DEBUG 18160 --- [http-nio-8084-exec-4] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:18:06.345 DEBUG 18160 --- [http-nio-8084-exec-10] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:18:06.345 DEBUG 18160 --- [http-nio-8084-exec-10] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:18:06.458 DEBUG 18160 --- [http-nio-8084-exec-2] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:18:06.458 DEBUG 18160 --- [http-nio-8084-exec-2] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:18:06.567 DEBUG 18160 --- [http-nio-8084-exec-3] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:18:06.567 DEBUG 18160 --- [http-nio-8084-exec-3] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:18:06.668 DEBUG 18160 --- [http-nio-8084-exec-4] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:18:06.668 DEBUG 18160 --- [http-nio-8084-exec-4] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:18:06.766 DEBUG 18160 --- [http-nio-8084-exec-6] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:18:06.766 DEBUG 18160 --- [http-nio-8084-exec-6] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:18:06.853 DEBUG 18160 --- [http-nio-8084-exec-7] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:18:06.853 DEBUG 18160 --- [http-nio-8084-exec-7] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:18:06.946 DEBUG 18160 --- [http-nio-8084-exec-8] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:18:06.946 DEBUG 18160 --- [http-nio-8084-exec-8] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:18:07.031 DEBUG 18160 --- [http-nio-8084-exec-9] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:18:07.031 DEBUG 18160 --- [http-nio-8084-exec-9] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:18:07.124 DEBUG 18160 --- [http-nio-8084-exec-1] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:18:07.124 DEBUG 18160 --- [http-nio-8084-exec-1] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:18:07.211 DEBUG 18160 --- [http-nio-8084-exec-10] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:18:07.211 DEBUG 18160 --- [http-nio-8084-exec-10] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:18:07.327 DEBUG 18160 --- [http-nio-8084-exec-2] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:18:07.327 DEBUG 18160 --- [http-nio-8084-exec-2] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:18:07.430 DEBUG 18160 --- [http-nio-8084-exec-3] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:18:07.430 DEBUG 18160 --- [http-nio-8084-exec-3] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:18:07.500 DEBUG 18160 --- [http-nio-8084-exec-4] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:18:07.500 DEBUG 18160 --- [http-nio-8084-exec-4] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:18:07.600 DEBUG 18160 --- [http-nio-8084-exec-5] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:18:07.600 DEBUG 18160 --- [http-nio-8084-exec-5] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:18:07.674 DEBUG 18160 --- [http-nio-8084-exec-6] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:18:07.674 DEBUG 18160 --- [http-nio-8084-exec-6] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:18:07.759 DEBUG 18160 --- [http-nio-8084-exec-7] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:18:07.759 DEBUG 18160 --- [http-nio-8084-exec-7] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:18:07.846 DEBUG 18160 --- [http-nio-8084-exec-8] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:18:07.846 DEBUG 18160 --- [http-nio-8084-exec-8] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:18:07.936 DEBUG 18160 --- [http-nio-8084-exec-9] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:18:07.936 DEBUG 18160 --- [http-nio-8084-exec-9] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:18:43.249 DEBUG 18160 --- [http-nio-8084-exec-9] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:18:43.249 DEBUG 18160 --- [http-nio-8084-exec-9] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:18:43.319 DEBUG 18160 --- [http-nio-8084-exec-1] m.s.filter.TokenAuthFilter               : 开始执行TokenAuthFilter过滤器的doFilterInternal方法
+2022-08-08 21:18:43.319 DEBUG 18160 --- [http-nio-8084-exec-1] m.s.filter.TokenAuthFilter               : 获取token
+2022-08-08 21:19:02.037  WARN 18160 --- [Thread-10] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2022-08-08 21:19:02.037  WARN 18160 --- [Thread-4] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2022-08-08 21:19:02.037  WARN 18160 --- [Thread-10] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2022-08-08 21:19:02.038  WARN 18160 --- [Thread-4] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2022-08-08 21:19:02.059  INFO 18160 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'Nacos-Watch-Task-Scheduler'
+2022-08-08 21:19:02.061  INFO 18160 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-08-08 21:19:02.062  INFO 18160 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-08-08 21:19:02.063  INFO 18160 --- [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2022-08-08 21:19:02.067  INFO 18160 --- [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+2022-08-08 21:19:08.135  WARN 18160 --- [SpringContextShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Destroy method 'close' on bean with name 'nacosServiceRegistry' threw an exception: java.lang.NullPointerException: Cannot invoke "com.alibaba.nacos.api.naming.NamingService.shutDown()" because "this.namingService" is null
+2022-08-08 21:19:08.135  INFO 18160 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
