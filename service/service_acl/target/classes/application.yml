@@ -82,4 +82,7 @@ logging:
     # 日志输出格式
 
 
+server:
+  port: 8084
+
 

@@ -15,7 +15,8 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 @RequestMapping("/rolePermission")
-public class RolePermissionController {
+public class RolePermissionController
+{
 
 }
 
