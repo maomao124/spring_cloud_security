@@ -59,6 +59,7 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter
         {
             User user = new ObjectMapper().readValue(request.getInputStream(), User.class);
             return authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+            //return authenticationManager.authenticate(new UsernamePasswordAuthenticationToken("admin", "123"));
         }
         catch (Exception e)
         {
